@@ -29,10 +29,10 @@ return (
 );
 */
 
-export default function Dictionary(props) {
+export default function ResponseHandling(props) {
   if (props.results) {
     return (
-      <div className="Dictionary">
+      <div className="ResponseHandling">
         <h2>{props.results.word}</h2>
         {props.results.meanings.map(function (meaning, index) {
           return (
