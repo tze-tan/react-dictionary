@@ -22,7 +22,6 @@ export default function Dictionary() {
 
   /* display the result */
   function displayDefinition(response) {
-    console.log(response.data);
     setResults(response.data);
   }
 
@@ -31,7 +30,7 @@ export default function Dictionary() {
       <h1 className="pt-5">Dictionary </h1>
       <h2 className="p-3">Which word would you like to look up?</h2>
       <form onSubmit={Search}>
-        <input type="search" onChange={handleSearchTerm} />
+        <input type="search" onChange={handleSearchTerm} className="mb-4" />
       </form>
 
       <ResponseHandling results={results} />

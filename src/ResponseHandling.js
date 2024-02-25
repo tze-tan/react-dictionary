@@ -1,4 +1,31 @@
 import React from "react";
+import Synonyms from "./Synonyms";
+
+export default function ResponseHandling(props) {
+  if (props.results) {
+    return (
+      <div className="ResponseHandling">
+        <h2>{props.results.word}</h2>
+        {props.results.meanings.map(function (meaning, index) {
+          return (
+            <div key={index}>
+              <h3>{meaning.partOfSpeech}</h3>
+              <p>
+                <strong>Definition:</strong> {meaning.definition}
+              </p>
+              <p>
+                <em>{meaning.example}</em>
+              </p>
+              <Synonyms synonyms={meaning.synonyms} />
+            </div>
+          );
+        })}
+      </div>
+    );
+  } else {
+    return null;
+  }
+}
 
 /* looping through elements simple example 
 
@@ -28,26 +55,3 @@ return (
   </ul>
 );
 */
-
-export default function ResponseHandling(props) {
-  if (props.results) {
-    return (
-      <div className="ResponseHandling">
-        <h2>{props.results.word}</h2>
-        {props.results.meanings.map(function (meaning, index) {
-          return (
-            <div key={index}>
-              <h3>{meaning.partOfSpeech}</h3>
-              <p>Definition: {meaning.definition}</p>
-              <p>
-                <em>{meaning.example}</em>
-              </p>
-            </div>
-          );
-        })}
-      </div>
-    );
-  } else {
-    return null;
-  }
-}
