@@ -1,0 +1,14 @@
+.Dictionary input {
+  width: 80%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  line-height: 1.5;
+  background-color: #141218;
+  color: #cac4d0;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 20px;
+  margin: 20px;
+}

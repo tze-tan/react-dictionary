@@ -1,14 +1,18 @@
 import React from "react";
 import Synonyms from "./Synonyms";
+import "./ResponseHandling.css";
 
 export default function ResponseHandling(props) {
   if (props.results) {
     return (
       <div className="ResponseHandling">
-        <h2>{props.results.word}</h2>
+        <section>
+          <h2>{props.results.word}</h2>
+          <p>{props.results.phonetic}</p>
+        </section>
         {props.results.meanings.map(function (meaning, index) {
           return (
-            <div key={index}>
+            <section key={index}>
               <h3>{meaning.partOfSpeech}</h3>
               <p>
                 <strong>Definition:</strong> {meaning.definition}
@@ -17,7 +21,7 @@ export default function ResponseHandling(props) {
                 <em>{meaning.example}</em>
               </p>
               <Synonyms synonyms={meaning.synonyms} />
-            </div>
+            </section>
           );
         })}
       </div>

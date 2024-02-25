@@ -29,10 +29,11 @@ export default function Dictionary() {
     <div className="Dictionary">
       <h1 className="pt-5">Dictionary </h1>
       <h2 className="p-3">Which word would you like to look up?</h2>
-      <form onSubmit={Search}>
-        <input type="search" onChange={handleSearchTerm} className="mb-4" />
-      </form>
-
+      <section>
+        <form onSubmit={Search}>
+          <input type="search" onChange={handleSearchTerm} />
+        </form>
+      </section>
       <ResponseHandling results={results} />
     </div>
   );
