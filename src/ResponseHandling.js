@@ -6,20 +6,16 @@ export default function ResponseHandling(props) {
   if (props.results) {
     return (
       <div className="ResponseHandling">
-        <section>
-          <h2>{props.results.word}</h2>
-          <p>{props.results.phonetic}</p>
-        </section>
+        <div className="word-and-phonetic">
+          <span className="word">{props.results.word}</span>
+          <span className="phonetic">{props.results.phonetic}</span>
+        </div>
         {props.results.meanings.map(function (meaning, index) {
           return (
             <section key={index}>
               <h3>{meaning.partOfSpeech}</h3>
-              <p>
-                <strong>Definition:</strong> {meaning.definition}
-              </p>
-              <p>
-                <em>{meaning.example}</em>
-              </p>
+              <div className="definition">{meaning.definition}</div>
+              <div className="example">{meaning.example}</div>
               <Synonyms synonyms={meaning.synonyms} />
             </section>
           );
