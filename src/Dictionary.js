@@ -31,7 +31,11 @@ export default function Dictionary() {
       <h2 className="p-3">Which word would you like to look up?</h2>
       <section>
         <form onSubmit={Search}>
-          <input type="search" onChange={handleSearchTerm} />
+          <input
+            type="search"
+            onChange={handleSearchTerm}
+            placeholder="Examples: wine, country, school, food"
+          />
         </form>
       </section>
       <ResponseHandling results={results} />
