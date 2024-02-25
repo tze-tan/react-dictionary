@@ -16,6 +16,7 @@ export default function ResponseHandling(props) {
               <h3>{meaning.partOfSpeech}</h3>
               <div className="definition">{meaning.definition}</div>
               <div className="example">{meaning.example}</div>
+              <div className="synonym-header">Synonyms</div>
               <Synonyms synonyms={meaning.synonyms} />
             </section>
           );

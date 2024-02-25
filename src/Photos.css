@@ -1,0 +1,13 @@
+.Photos section {
+  background-color: #cac4d0;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 20px 0 30px 0;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.Photos img {
+  height: 100px;
+  border-radius: 5px;
+  margin: 20px;
+}

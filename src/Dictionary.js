@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
 import ResponseHandling from "./ResponseHandling";
+import Photos from "./Photos";
 import "./Dictionary.css";
 
 export default function Dictionary() {
   const [keyword, setKeyword] = useState("");
   const [results, setResults] = useState(null);
+  const [photos, setPhotos] = useState(null);
 
   /* sets the search term based on user input value */
   function handleSearchTerm(event) {
@@ -17,12 +19,20 @@ export default function Dictionary() {
     event.preventDefault();
     let key = "4916caba061520co8b34c1aft75528fb";
     let url = `https://api.shecodes.io/dictionary/v1/define?word=${keyword}&key=${key}`;
-    axios.get(url).then(displayDefinition);
+    axios.get(url).then(handleDefinition);
+
+    let photosUrl = `https://api.unsplash.com/search/photos?per_page=9&query=${keyword}&client_id=tdwMIrFTrnVT7-dSnoPMhxWaBDpd-iHUiOdeZdzjRIg`;
+    axios.get(photosUrl).then(handlePhotos);
   }
 
-  /* display the result */
-  function displayDefinition(response) {
+  /* handle the result */
+  function handleDefinition(response) {
     setResults(response.data);
+  }
+
+  function handlePhotos(response) {
+    console.log(response);
+    setPhotos(response.data.results);
   }
 
   return (
@@ -39,6 +49,7 @@ export default function Dictionary() {
         </form>
       </section>
       <ResponseHandling results={results} />
+      <Photos photos={photos} />
     </div>
   );
 }

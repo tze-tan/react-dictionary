@@ -24,6 +24,14 @@ h3 {
   margin-top: 5px;
   opacity: 60%;
   font-style: italic;
+  font-size: 16px;
+}
+
+.ResponseHandling .synonym-header {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 5px;
 }
 
 .ResponseHandling .word-and-phonetic {
